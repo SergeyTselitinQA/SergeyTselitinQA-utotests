@@ -1,1 +1,1 @@
-# SergeyTselitinQA-utotests
+# SergeyTselitinQA-Autotests
