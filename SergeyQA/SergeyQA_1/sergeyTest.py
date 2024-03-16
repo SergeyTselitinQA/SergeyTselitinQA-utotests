@@ -9,4 +9,5 @@ def test_can_login():
     browser.element('.login-form [name=password]').type('2fedaadd').press_enter()
     browser.element('#xdget642385_1').should(have.text('Здравствуйте, Vitali'))
 
-    browser.open('https://school.qa.guru/cms/system/logi')
+    
+    browser.open('https://school.qa.guru/cms/system/logind')
