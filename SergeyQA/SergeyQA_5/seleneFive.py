@@ -1,11 +1,12 @@
-import time
+from imghdr import tests
+from pathlib import Path
+
 
 from selene import browser, have, command
 
 browser.config.browser_name = "firefox"
 browser.config.hold_browser_open = True
-browser.config.window_width = 1980
-browser.config.window_height = 960
+
 
 def test_hw():
     browser.open('https://demoqa.com/automation-practice-form')
@@ -25,3 +26,10 @@ def test_hw():
     browser.element(".subjects-auto-complete__value-container").perform(command.js.scroll_into_view)
     browser.element('#subjectsInput').type('English')
     browser.element('#react-select-2-option-0').click()
+
+    browser.element("[for='hobbies-checkbox-3']").perform(command.js.scroll_into_view)
+    browser.element("[for='hobbies-checkbox-3']").click()
+
+    browser.element('#uploadPicture').set_value(
+        str(Path(tests.__file__).parent.joinpath('resources/foto.jpg').absolute())
+    )
