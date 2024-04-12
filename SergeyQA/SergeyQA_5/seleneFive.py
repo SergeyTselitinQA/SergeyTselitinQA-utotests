@@ -46,3 +46,20 @@ def test_hw():
     ).click()
 
     browser.element('#submit').click()
+
+    # THEN
+    browser.element('.table').all('td').even.should(
+        have.exact_text(
+            'Ivan',
+            'Ivanov',
+            'qaguru@mailto.plus',
+            'Female',
+            '3753333333',
+            '1 May,2000',
+            'English',
+            'foto.jpg',
+            'Беларусь, г. Орша, ул. Мира, д. 3',
+            'NCR',
+            'Delhi'
+        )
+    )
