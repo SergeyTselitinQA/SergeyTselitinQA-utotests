@@ -48,8 +48,9 @@ def test_hw():
     browser.element('#submit').click()
 
     # THEN
-    browser.element('.table').all('td').even.should(
-        have.exact_text(
+
+    browser.all(".table-responsive td").by(
+        have.exact_texts(
             'Ivan',
             'Ivanov',
             'qaguru@mailto.plus',
